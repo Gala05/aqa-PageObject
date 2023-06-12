@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/yqmr8tabel8m744u?svg=true)](https://ci.appveyor.com/project/Gala05/aqa-pageobject)
