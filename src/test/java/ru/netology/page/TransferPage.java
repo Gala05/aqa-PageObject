@@ -35,20 +35,4 @@ public class TransferPage {
     public void findErrorMessage(String expectedText) {
         errorMessage.shouldHave(exactText(expectedText), Duration.ofSeconds(15)).shouldBe(visible);
     }
-
-//    public DashboardPage replenishInFirst() {
-//        replenishMoneyInFirstCard.click();
-//        amount.setValue(DataHelper.generateValidAmount(10000));
-//        fromCard.setValue(DataHelper.CardInfo.);
-//        transferButton.click();
-//        return new DashboardPage();
-//    }
-//
-//    public DashboardPage replenishInSecond() {
-//        replenishMoneyInSecondCard.click();
-//        amount.setValue("600");
-//        fromCard.setValue(DataHelper.getFirstCard());
-//        transferButton.click();
-//        return new DashboardPage();
-//    }
 }
