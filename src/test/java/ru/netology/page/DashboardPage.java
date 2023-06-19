@@ -21,19 +21,8 @@ public class DashboardPage {
         heading.shouldBe(visible);
     }
 
-    public int getFirstCardBalance() {
-        val text = cards.first().text();
-        return extractBalance(text);
-    }
-
-
-    public int getCardBalance(int id) {
-        var text = cards.get(id).getText();
-        return extractBalance(text);
-    }
-
     public int getCardBalance(DataHelper.CardInfo cardInfo) {
-        var text = cards.findBy(Condition.text(cardInfo.getCardNumber().substring(15))).getText();
+        var text = cards.findBy(Condition.text(cardInfo.getCardNumber().substring(12))).getText();
         return extractBalance(text);
     }
 
@@ -43,8 +32,9 @@ public class DashboardPage {
         val value = text.substring(start + balanceStart.length(), finish);
         return Integer.parseInt(value);
     }
+
     public TransferPage selectCardToTransfer(DataHelper.CardInfo cardInfo) {
-        cards.findBy(attribute("data-test-id",cardInfo.getCardId())).$("button").click();
+        cards.findBy(attribute("data-test-id", cardInfo.getCardId())).$("button").click();
         return new TransferPage();
     }
 }
